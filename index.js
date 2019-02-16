@@ -2,7 +2,12 @@
 // https://stackoverflow.com/questions/18292716/javascript-countdown-with-specific-timezone?lq=1
 
 function renderCountdown(endDate) {
-  countdown('04/01/2019 05:00:00 PM PST');
+  var currDate = new Date()
+  var endTimer = new Date(endDate)
+
+  if (endTimer>currDate) {
+    countdown(endDate);
+  }
 }
 
 function countdown(endDate) {
