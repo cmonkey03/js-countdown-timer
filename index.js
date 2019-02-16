@@ -5,6 +5,9 @@ function renderCountdown(endDate) {
   var currDate = new Date()
   var endTimer = new Date(endDate)
 
+  var countdownContainer = document.getElementById("countdown-container")
+  console.log(countdownContainer)
+
   if (endTimer>currDate) {
     countdown(endDate);
   }
