@@ -5,8 +5,14 @@ function renderCountdown(endDate) {
   var currDate = new Date()
   var endTimer = new Date(endDate)
 
+  //Find the element to be removed if countdown is over
+  var countdownContainer = document.getElementById('countdown-container')
+
   if (endTimer>currDate) {
     countdown(endDate);
+  } else {
+    //Clear timer if countdown is over
+    countdownContainer.innerHTML = ""
   }
 }
 
@@ -49,6 +55,6 @@ function countdown(endDate) {
   }
 }
 
-(function () {
+document.addEventListener('DOMContentLoaded', function() {
   renderCountdown('04/01/2019 05:00:00 PM PST');
-}());
+});
