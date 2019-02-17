@@ -1,5 +1,6 @@
 // For timezone support see:
 // https://stackoverflow.com/questions/18292716/javascript-countdown-with-specific-timezone?lq=1
+var inputDatetime;
 
 function renderCountdown(endDate) {
   var currDate = new Date()
@@ -56,5 +57,12 @@ function countdown(endDate) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('form')
+
+  form.addEventListener('submit', function() {
+    event.preventDefault()
+    console.log("hello")
+  })
+
   renderCountdown('04/01/2019 05:00:00 PM PST');
 });
