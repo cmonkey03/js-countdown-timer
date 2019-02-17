@@ -57,8 +57,11 @@ function countdown(endDate) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('form').addEventListener('submit', function() {
+  const form = document.getElementById('form')
 
+  form.addEventListener('submit', function() {
+    event.preventDefault()
+    console.log("hello")
   })
 
   renderCountdown('04/01/2019 05:00:00 PM PST');
