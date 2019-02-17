@@ -5,6 +5,7 @@ body, html {
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 12px;
@@ -12,8 +13,19 @@ body {
   /* background: url('https://images.unsplash.com/photo-1472148083604-64f1084980b9?dpr=2&auto=format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=') no-repeat center center / cover; */
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 70%;
+  justify-content: space-between;
+  padding-bottom: 5em;
+}
+
 .countdown-container {
   display: flex;
+  align-items: center;
   width: 100%;
   max-width: 70%;
   justify-content: space-between;

@@ -3,21 +3,8 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   var inputDatetime;
-
-  function renderCountdown(endDate) {
-    var currDate = new Date()
-    var endTimer = new Date(endDate)
-
-    //Find the element to be removed if countdown is over
-    var countdownContainer = document.getElementById('countdown-container')
-
-    if (endTimer>currDate) {
-      countdown(endDate);
-    } else {
-      //Clear timer if countdown is over
-      countdownContainer.innerHTML = ""
-    }
-  }
+  let today = new Date().toISOString().substring(0, 16)
+  document.querySelector("#datetime").value = today
 
   function countdown(endDate) {
     let days, hours, minutes, seconds;
@@ -53,6 +40,9 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("minutes").innerHTML = ("0" + minutes).slice(-2);
         document.getElementById("seconds").innerHTML = ("0" + seconds).slice(-2);
       } else {
+        //Find the element to be removed if countdown is over
+        var countdownContainer = document.getElementById('countdown-container')
+        countdownContainer.innerHTML = ""
         return;
       }
     }
@@ -69,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
     event.preventDefault()
     inputDatetime = datetime
     form.reset()
-    renderCountdown(inputDatetime);
+    countdown(inputDatetime);
   })
 
 });
