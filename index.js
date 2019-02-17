@@ -58,10 +58,16 @@ function countdown(endDate) {
 
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('form')
+  let datetime;
 
-  form.addEventListener('submit', function() {
+  form.addEventListener('input', function(event) {
+    datetime = event.target.value
+  })
+
+  form.addEventListener('submit', function(event) {
     event.preventDefault()
-    console.log("hello")
+    inputDatetime = datetime
+    console.log(new Date(inputDatetime))
   })
 
   renderCountdown('04/01/2019 05:00:00 PM PST');
