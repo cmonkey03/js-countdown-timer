@@ -5,10 +5,14 @@ function renderCountdown(endDate) {
   var currDate = new Date()
   var endTimer = new Date(endDate)
 
-  var countdownContainer = document.getElementById("countdown-container")
+  //Find the element to be removed if countdown is over
+  var countdownContainer = document.getElementById('countdown-container')
 
   if (endTimer>currDate) {
     countdown(endDate);
+  } else {
+    //Clear timer if countdown is over
+    countdownContainer.innerHTML = ""
   }
 }
 
