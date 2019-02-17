@@ -6,7 +6,6 @@ function renderCountdown(endDate) {
   var endTimer = new Date(endDate)
 
   var countdownContainer = document.getElementById("countdown-container")
-  console.log(countdownContainer)
 
   if (endTimer>currDate) {
     countdown(endDate);
@@ -52,6 +51,6 @@ function countdown(endDate) {
   }
 }
 
-(function () {
+document.addEventListener('DOMContentLoaded', function() {
   renderCountdown('04/01/2019 05:00:00 PM PST');
-}());
+});
