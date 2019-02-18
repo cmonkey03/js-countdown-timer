@@ -25,6 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
   function countdown(endDate) {
     let days, hours, minutes, seconds;
 
+    let dayTimer = document.getElementById("days")
+    let hourTimer = document.getElementById("hours")
+    let minuteTimer = document.getElementById("minutes")
+    let secondTimer = document.getElementById("seconds")
+    let titleBar= document.getElementById("title-bar")
+
     endDate = new Date(endDate).getTime();
 
     if (isNaN(endDate)) {
@@ -51,18 +57,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
         seconds = parseInt(timeRemaining);
 
-        document.getElementById("days").innerHTML = parseInt(days, 10);
-        document.getElementById("hours").innerHTML = ("0" + hours).slice(-2);
-        document.getElementById("minutes").innerHTML = ("0" + minutes).slice(-2);
-        document.getElementById("seconds").innerHTML = ("0" + seconds).slice(-2);
-        document.getElementById("title-bar").innerHTML = "Time to video launch"
+        titleBar.innerHTML = "Countdown to video launch"
+        dayTimer.innerHTML = parseInt(days, 10);
+        hourTimer.innerHTML = ("0" + hours).slice(-2);
+        minuteTimer.innerHTML = ("0" + minutes).slice(-2);
+        secondTimer.innerHTML = ("0" + seconds).slice(-2);
       } else {
         //Remove countdown timer
         var countdownContainer = document.getElementById('countdown-container')
         countdownContainer.innerHTML = ""
 
         //Display hours, minutes and seconds into video
-        //Add code to render text
+        titleBar.innerHTML = "Time into video play"
+
         return;
       }
     }
