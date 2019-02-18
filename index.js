@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
   //These variables support the datetime input field for the countdown timer
   let datetimeInput;
   let selectedDatetime;
-
   const today = new Date()
   const form = document.getElementById('form')
 
