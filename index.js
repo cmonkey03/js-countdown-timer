@@ -2,10 +2,10 @@
 // https://stackoverflow.com/questions/18292716/javascript-countdown-with-specific-timezone?lq=1
 
 document.addEventListener('DOMContentLoaded', function() {
-  var inputDatetime;
+  let datetimeInput;
+  let selectedDatetime;
   let today = new Date().toISOString().substring(0, 16)
   document.querySelector("#datetime").value = today
-  let datetimeInput;
 
   const form = document.getElementById('form')
 
@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   form.addEventListener('submit', function(event) {
     event.preventDefault()
-    inputDatetime = datetimeInput
+    selectedDatetime = datetimeInput
     form.reset()
-    countdown(inputDatetime);
+    countdown(selectedDatetime);
   })
 
   function countdown(endDate) {
