@@ -2,12 +2,13 @@
 // https://stackoverflow.com/questions/18292716/javascript-countdown-with-specific-timezone?lq=1
 
 document.addEventListener('DOMContentLoaded', function() {
+  //These variables support the datetime input field for the countdown timer
   let datetimeInput;
   let selectedDatetime;
-  let today = new Date().toISOString().substring(0, 16)
-  document.querySelector("#datetime").value = today
-
+  const today = new Date()
   const form = document.getElementById('form')
+
+  document.querySelector("#datetime").value = today.toISOString().substring(0, 16)
 
   form.addEventListener('input', function(event) {
     datetimeInput = event.target.value
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     countdown(selectedDatetime);
   })
 
+  //This is the logic for the countdown timer
   function countdown(endDate) {
     let days, hours, minutes, seconds;
 
