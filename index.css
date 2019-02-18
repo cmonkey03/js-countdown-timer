@@ -10,7 +10,7 @@ body {
   align-items: center;
   font-size: 12px;
   color: white;
-  /* background: url('https://images.unsplash.com/photo-1472148083604-64f1084980b9?dpr=2&auto=format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=') no-repeat center center / cover; */
+  background: url('https://images.unsplash.com/photo-1472148083604-64f1084980b9?dpr=2&auto=format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=') no-repeat center center / cover;
 }
 
 .form {

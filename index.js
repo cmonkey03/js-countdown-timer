@@ -5,10 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
   //These variables support the datetime input field for the countdown timer
   let datetimeInput;
   let selectedDatetime;
+
   const today = new Date()
   const form = document.getElementById('form')
 
-  document.querySelector("#datetime").value = today.toISOString().substring(0, 16)
+  form.querySelector("#datetime").value = today.toISOString().substring(0, 16)
 
   form.addEventListener('input', function(event) {
     datetimeInput = event.target.value
@@ -17,8 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
   form.addEventListener('submit', function(event) {
     event.preventDefault()
     selectedDatetime = datetimeInput
-    form.reset()
     countdown(selectedDatetime);
+    form.reset()
   })
 
   //This is the logic for the countdown timer
@@ -64,6 +65,5 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   }
-
 
 });
