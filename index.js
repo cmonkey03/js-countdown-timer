@@ -5,6 +5,20 @@ document.addEventListener('DOMContentLoaded', function() {
   var inputDatetime;
   let today = new Date().toISOString().substring(0, 16)
   document.querySelector("#datetime").value = today
+  let datetimeInput;
+
+  const form = document.getElementById('form')
+
+  form.addEventListener('input', function(event) {
+    datetimeInput = event.target.value
+  })
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault()
+    inputDatetime = datetimeInput
+    form.reset()
+    countdown(inputDatetime);
+  })
 
   function countdown(endDate) {
     let days, hours, minutes, seconds;
@@ -18,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(calculate, 1000);
 
     function calculate() {
+      // Determine current time for countdown
       let startDate = new Date();
       startDate = startDate.getTime();
 
@@ -48,18 +63,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  const form = document.getElementById('form')
-  let datetime;
-
-  form.addEventListener('input', function(event) {
-    datetime = event.target.value
-  })
-
-  form.addEventListener('submit', function(event) {
-    event.preventDefault()
-    inputDatetime = datetime
-    form.reset()
-    countdown(inputDatetime);
-  })
 
 });
