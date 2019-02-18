@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(calculate, 1000);
 
     function calculate() {
-      // Determine current time for countdown
       let startDate = new Date();
       startDate = startDate.getTime();
 
@@ -56,10 +55,14 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("hours").innerHTML = ("0" + hours).slice(-2);
         document.getElementById("minutes").innerHTML = ("0" + minutes).slice(-2);
         document.getElementById("seconds").innerHTML = ("0" + seconds).slice(-2);
+        document.getElementById("title-bar").innerHTML = "Time to video launch"
       } else {
-        //Find the element to be removed if countdown is over
+        //Remove countdown timer
         var countdownContainer = document.getElementById('countdown-container')
         countdownContainer.innerHTML = ""
+
+        //Display hours, minutes and seconds into video
+        //Add code to render text
         return;
       }
     }
