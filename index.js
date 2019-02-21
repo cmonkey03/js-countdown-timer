@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let selectedDatetime;
   const today = new Date()
   const form = document.getElementById('form')
+  const inputMessage= document.getElementById("input-message")
 
   form.querySelector("#datetime").value = today.toISOString().substring(0, 16)
 
