@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
       let timeRemaining = parseInt((endDate - startDate) / 1000);
 
       if (timeRemaining >= 0) {
+        inputMessage.innerHTML = ""
 
         days = parseInt(timeRemaining / 86400);
         timeRemaining = (timeRemaining % 86400);
