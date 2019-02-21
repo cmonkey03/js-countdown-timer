@@ -7,7 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
   let selectedDatetime;
   const today = new Date()
   const form = document.getElementById('form')
+  const inputMessage= document.getElementById("input-message")
 
+  inputMessage.innerHTML = "Please select a date and time in the future"
   form.querySelector("#datetime").value = today.toISOString().substring(0, 16)
 
   form.addEventListener('input', function(event) {
@@ -46,6 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
       let timeRemaining = parseInt((endDate - startDate) / 1000);
 
       if (timeRemaining >= 0) {
+        inputMessage.innerHTML = ""
+
         days = parseInt(timeRemaining / 86400);
         timeRemaining = (timeRemaining % 86400);
 
