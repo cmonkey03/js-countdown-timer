@@ -1,6 +1,22 @@
 // For timezone support see:
 // https://stackoverflow.com/questions/18292716/javascript-countdown-with-specific-timezone?lq=1
 
+// need the JS to accept the three arguments: div ID, show, hide (datetime string or time delta)
+// output: days, hours, minutes, seconds (create a span with a classname)
+
+
+// 1. one to countdown ("countdown-days", "countdown-hours", etc): don't worry about removing
+    // two args: (div, target)
+// 2. one to countup ("countup-days", "countup-hours"): don't remove
+    // two args: (div, start)
+// 3. show hide ("div id")
+    // three: (div, start, end)
+// 4. clear all: stop all timers; global variables to stop timers
+    // one arg: (end)
+
+//[gf_timed_content div=‘aaa’ show=‘bbb’ hide=‘ccc] 
+//init_timed_div(json) store divid, showtime, stoptime in a global array
+
 document.addEventListener('DOMContentLoaded', function() {
   //These variables support the datetime input field for the countdown timer
   let datetimeInput;
