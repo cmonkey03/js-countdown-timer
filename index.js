@@ -17,6 +17,11 @@
 //[gf_timed_content div=‘aaa’ show=‘bbb’ hide=‘ccc] 
 //init_timed_div(json) store divid, showtime, stoptime in a global array
 
+// [gf_countdown div_id='div_id' to_date='2019-02-22 16:00:00']
+// counting down to specific date-time [gf_countdown div_id='div_id' to_date='+10']
+
+// counting down to 10s from now
+
 document.addEventListener('DOMContentLoaded', function() {
   //These variables support the datetime input field for the countdown timer
   let datetimeInput;
