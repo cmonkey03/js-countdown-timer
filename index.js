@@ -9,7 +9,7 @@
     // two args: (div, target)
 // 2. one to countup ("countup-days", "countup-hours"): don't remove
     // two args: (div, start)
-// 3. show hide ("div id")
+// NO LONGER NEED 3. show hide ("div id")
     // three: (div, start, end)
 // 4. clear all: stop all timers; global variables to stop timers
     // one arg: (end)
