@@ -13,7 +13,7 @@ function gf_timed_content_countdown(json_arg) {
 
 	console.log(date)
 	console.log(dateObj)
-	// console.log(the_div)
+	console.log(the_div)
 
 	debugger;
 
