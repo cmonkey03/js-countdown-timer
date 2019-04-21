@@ -7,13 +7,13 @@ function gf_timed_content_countdown(json_arg) {
 	const args = JSON.parse(json_arg);
 	const the_div = args['div_id']
 
-	//Remove day of week
-	const date = args.to_date.substr(4)
+	//Remove day of week and timezone
+	const date = args.to_date.substr(4, 21)
 	const dateObj = new Date(date)
 
 	console.log(date)
 	console.log(dateObj)
-	console.log(the_div)
+	// console.log(the_div)
 
 	debugger;
 
