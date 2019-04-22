@@ -32,11 +32,11 @@ function CountdownTimer(endDate, the_div) {
       timer.innerHTML += 'Seconds:' + ("0" + seconds).slice(-2);
     } else {
       //Remove countdown timer
-      var countdownContainer = document.getElementById('countdown-container')
-      countdownContainer.innerHTML = ""
+      // var countdownContainer = document.getElementById('countdown-container')
+      // countdownContainer.innerHTML = ""
 
       //Display hours, minutes and seconds into video
-      titleBar.innerHTML = "Time into video play"
+      // titleBar.innerHTML = "Time into video play"
 
       return;
     }
@@ -55,10 +55,6 @@ function gf_timed_content_countdown(json_arg) {
 	//Remove day of week and timezone
 	const date = args.to_date.substr(4, 21)
 	const time = new Date(date).getTime()
-
-	console.log(date)
-	console.log(args)
-	console.log(the_div)
 
 	setTimeout(CountdownTimer(time, the_div), 3000)
 }
