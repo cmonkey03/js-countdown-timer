@@ -1,6 +1,5 @@
 function CountdownTimer(endDate, the_div) {
 	let days, hours, minutes, seconds;
-	let timer = document.getElementById(the_div)
 
   if (isNaN(endDate)) {
   	return;
@@ -9,6 +8,8 @@ function CountdownTimer(endDate, the_div) {
   setInterval(calculate, 1000);
 
   function calculate() {
+		let timer = document.getElementById(the_div)
+
     let startDate = new Date();
     startDate = startDate.getTime();
 
@@ -26,7 +27,7 @@ function CountdownTimer(endDate, the_div) {
 
       seconds = parseInt(timeRemaining);
 
-      timer.innerHTML += 'Days:' + parseInt(days, 10) + ', ';
+      timer.innerHTML = 'Days:' + parseInt(days, 10) + ', ';
       timer.innerHTML += 'Hours:' + ("0" + hours).slice(-2) + ', ';
       timer.innerHTML += 'Minutes:' + ("0" + minutes).slice(-2) + ', ';
       timer.innerHTML += 'Seconds:' + ("0" + seconds).slice(-2);
