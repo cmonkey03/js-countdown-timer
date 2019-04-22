@@ -2,8 +2,6 @@ function CountdownTimer(endDate, the_div) {
 	let days, hours, minutes, seconds;
 	let timer = document.getElementById(the_div)
 
-	// endDate = new Date(endDate).getTime();
-
   if (isNaN(endDate)) {
   	return;
   }
