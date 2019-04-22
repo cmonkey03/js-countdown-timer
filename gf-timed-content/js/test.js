@@ -1,9 +1,11 @@
 function CountdownTimer(endDate) {
-  endDate = new Date(endDate).getTime();
+	let days, hours, minutes, seconds;
+
+	endDate = new Date(endDate).getTime();
 	let timer = document.getElementById(the_div)
 
   if (isNaN(endDate)) {
-  return;
+  	return;
   }
 
   setInterval(calculate, 1000);
