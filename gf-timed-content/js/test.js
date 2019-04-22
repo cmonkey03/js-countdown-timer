@@ -1,29 +1,22 @@
-function CountdownTimer(endDate) {
-  let days, hours, minutes, seconds;
-
-  let dayTimer = document.getElementById("days")
-  let hourTimer = document.getElementById("hours")
-  let minuteTimer = document.getElementById("minutes")
-  let secondTimer = document.getElementById("seconds")
-  let titleBar= document.getElementById("title-bar")
-
-  endDate = new Date(endDate).getTime();
+function CountdownTimer(endDate, the_div) {
 
   if (isNaN(endDate)) {
-  return;
+  	return;
   }
 
   setInterval(calculate, 1000);
 
   function calculate() {
+		let days, hours, minutes, seconds;
+
+		let timer = document.getElementById(the_div)
+		
     let startDate = new Date();
     startDate = startDate.getTime();
 
     let timeRemaining = parseInt((endDate - startDate) / 1000);
 
     if (timeRemaining >= 0) {
-      inputMessage.innerHTML = ""
-
       days = parseInt(timeRemaining / 86400);
       timeRemaining = (timeRemaining % 86400);
 
@@ -35,25 +28,22 @@ function CountdownTimer(endDate) {
 
       seconds = parseInt(timeRemaining);
 
-      titleBar.innerHTML = "Countdown to video launch"
-      dayTimer.innerHTML = parseInt(days, 10);
-      hourTimer.innerHTML = ("0" + hours).slice(-2);
-      minuteTimer.innerHTML = ("0" + minutes).slice(-2);
-      secondTimer.innerHTML = ("0" + seconds).slice(-2);
+      timer.innerHTML = 'Days:' + parseInt(days, 10) + ', ';
+      timer.innerHTML += 'Hours:' + ("0" + hours).slice(-2) + ', ';
+      timer.innerHTML += 'Minutes:' + ("0" + minutes).slice(-2) + ', ';
+      timer.innerHTML += 'Seconds:' + ("0" + seconds).slice(-2);
     } else {
       //Remove countdown timer
-      var countdownContainer = document.getElementById('countdown-container')
-      countdownContainer.innerHTML = ""
+      // var countdownContainer = document.getElementById('countdown-container')
+      // countdownContainer.innerHTML = ""
 
       //Display hours, minutes and seconds into video
-      titleBar.innerHTML = "Time into video play"
+      // titleBar.innerHTML = "Time into video play"
 
       return;
     }
   }
 }
-
-console.log(CountdownTimer)
 
 function gf_timed_content_init (json_arg) {
 	const args = JSON.parse(json_arg);
@@ -66,15 +56,7 @@ function gf_timed_content_countdown(json_arg) {
 
 	//Remove day of week and timezone
 	const date = args.to_date.substr(4, 21)
-	const dateObj = new Date(date)
+	const time = new Date(date).getTime()
 
-	console.log(date)
-	console.log(dateObj)
-	console.log(the_div)
-
-	debugger;
-
-	setTimeout(function() {
-		document.getElementById(the_div).innerHTML='imagine this is a countdown timer!';
-	}, 3000)
+	setTimeout(CountdownTimer(time, the_div), 3000)
 }
