@@ -1,8 +1,8 @@
 function CountdownTimer(endDate) {
 	let days, hours, minutes, seconds;
+	let timer = document.getElementById(the_div)
 
 	endDate = new Date(endDate).getTime();
-	let timer = document.getElementById(the_div)
 
   if (isNaN(endDate)) {
   	return;
@@ -17,8 +17,6 @@ function CountdownTimer(endDate) {
     let timeRemaining = parseInt((endDate - startDate) / 1000);
 
     if (timeRemaining >= 0) {
-      inputMessage.innerHTML = ""
-
       days = parseInt(timeRemaining / 86400);
       timeRemaining = (timeRemaining % 86400);
 
@@ -30,11 +28,10 @@ function CountdownTimer(endDate) {
 
       seconds = parseInt(timeRemaining);
 
-      titleBar.innerHTML = "Countdown to video launch"
-      dayTimer.innerHTML = parseInt(days, 10);
-      hourTimer.innerHTML = ("0" + hours).slice(-2);
-      minuteTimer.innerHTML = ("0" + minutes).slice(-2);
-      secondTimer.innerHTML = ("0" + seconds).slice(-2);
+      timer.innerHTML += 'Days:' + parseInt(days, 10);
+      timer.innerHTML += 'Hours:' + ("0" + hours).slice(-2);
+      timer.innerHTML += 'Minutes:'j + ("0" + minutes).slice(-2);
+      timer.innerHTML += 'Seconds:' + ("0" + seconds).slice(-2);
     } else {
       //Remove countdown timer
       var countdownContainer = document.getElementById('countdown-container')
