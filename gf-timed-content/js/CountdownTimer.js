@@ -1,4 +1,4 @@
-export default function countdown(endDate) {
+export default function CountdownTimer(endDate) {
   let days, hours, minutes, seconds;
 
   let dayTimer = document.getElementById("days")
