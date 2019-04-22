@@ -1,8 +1,8 @@
-function CountdownTimer(endDate) {
+function CountdownTimer(endDate, the_div) {
 	let days, hours, minutes, seconds;
 	let timer = document.getElementById(the_div)
 
-	endDate = new Date(endDate).getTime();
+	// endDate = new Date(endDate).getTime();
 
   if (isNaN(endDate)) {
   	return;
@@ -30,7 +30,7 @@ function CountdownTimer(endDate) {
 
       timer.innerHTML += 'Days:' + parseInt(days, 10);
       timer.innerHTML += 'Hours:' + ("0" + hours).slice(-2);
-      timer.innerHTML += 'Minutes:'j + ("0" + minutes).slice(-2);
+      timer.innerHTML += 'Minutes:' + ("0" + minutes).slice(-2);
       timer.innerHTML += 'Seconds:' + ("0" + seconds).slice(-2);
     } else {
       //Remove countdown timer
@@ -56,7 +56,11 @@ function gf_timed_content_countdown(json_arg) {
 
 	//Remove day of week and timezone
 	const date = args.to_date.substr(4, 21)
-	const dateObj = new Date(date)
+	const time = new Date(date).getTime()
 
-	setTimeout(CountdownTimer, 3000)
+	console.log(date)
+	console.log(args)
+	console.log(the_div)
+
+	setTimeout(CountdownTimer(time, the_div), 3000)
 }
