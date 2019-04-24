@@ -37,7 +37,7 @@ function gf_timed_content_countdown($atts) {
 	$args = shortcode_atts(
 		  array(
 				'div_id' => 'gf_countdown_div',
-				'to_date' => '2019-06-01 12:00:00'		
+				'to_date' => '2030-01-01 12:00:00'		
 			),
 			$atts
 	);
