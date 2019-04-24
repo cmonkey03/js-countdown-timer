@@ -11,12 +11,13 @@ function CountdownTimer(endDate, the_div) {
 
 		let timer = document.getElementById(the_div)
 
-    let startDate = new Date();
+    // Get Unix timestamp
+    let startTime = new Date().getTime();
     // Convert milliseconds to seconds to be
     // compatable with PHP timestamp
-    startDate = startDate.getTime() / 1000;
+    startTime = parseInt(startTime / 1000)
 
-    let timeRemaining = parseInt((endDate - startDate) / 1000);
+    let timeRemaining = endDate - startTime;
 
     if (timeRemaining >= 0) {
       days = parseInt(timeRemaining / 86400);
@@ -29,7 +30,7 @@ function CountdownTimer(endDate, the_div) {
       timeRemaining = (timeRemaining % 60);
 
       seconds = parseInt(timeRemaining);
-      console.log(timer)
+
       timer.innerHTML = 'Days:' + parseInt(days, 10) + ', ';
       timer.innerHTML += 'Hours:' + ("0" + hours).slice(-2) + ', ';
       timer.innerHTML += 'Minutes:' + ("0" + minutes).slice(-2) + ', ';
@@ -56,6 +57,6 @@ function gf_timed_content_countdown(json_arg) {
 	const args = JSON.parse(json_arg);
 	const the_div = args['div_id']
 	const time = parseInt(args.to_date)
-  debugger;
+
 	setTimeout(CountdownTimer(time, the_div), 3000)
 }
