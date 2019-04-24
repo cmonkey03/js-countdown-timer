@@ -10,7 +10,7 @@ function CountdownTimer(endDate, the_div) {
 		let days, hours, minutes, seconds;
 
 		let timer = document.getElementById(the_div)
-		
+
     let startDate = new Date();
     startDate = startDate.getTime();
 
