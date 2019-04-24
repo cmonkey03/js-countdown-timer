@@ -58,5 +58,5 @@ function gf_timed_content_countdown(json_arg) {
 	const the_div = args['div_id']
 	const endTime = parseInt(args.to_date)
 
-	setTimeout(CountdownTimer(endTime, the_div), 3000)
+	setTimeout(() => CountdownTimer(endTime, the_div), 3000)
 }
