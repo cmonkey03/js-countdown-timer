@@ -1,6 +1,6 @@
-function CountdownTimer(endDate, the_div) {
+function CountdownTimer(endTime, the_div) {
 
-  if (isNaN(endDate)) {
+  if (isNaN(endTime)) {
   	return;
   }
 
@@ -17,7 +17,7 @@ function CountdownTimer(endDate, the_div) {
     // compatable with PHP timestamp
     startTime = parseInt(startTime / 1000)
 
-    let timeRemaining = endDate - startTime;
+    let timeRemaining = endTime - startTime;
 
     if (timeRemaining >= 0) {
       days = parseInt(timeRemaining / 86400);
