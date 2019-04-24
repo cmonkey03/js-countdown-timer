@@ -11,10 +11,13 @@ function CountdownTimer(endDate, the_div) {
 
 		let timer = document.getElementById(the_div)
 
-    let startDate = new Date();
-    startDate = startDate.getTime();
+    // Get Unix timestamp
+    let startTime = new Date().getTime();
+    // Convert milliseconds to seconds to be
+    // compatable with PHP timestamp
+    startTime = parseInt(startTime / 1000)
 
-    let timeRemaining = parseInt((endDate - startDate) / 1000);
+    let timeRemaining = endDate - startTime;
 
     if (timeRemaining >= 0) {
       days = parseInt(timeRemaining / 86400);
@@ -53,10 +56,7 @@ function gf_timed_content_init (json_arg) {
 function gf_timed_content_countdown(json_arg) {
 	const args = JSON.parse(json_arg);
 	const the_div = args['div_id']
-
-	//Remove day of week and timezone
-	const date = args.to_date.substr(4, 21)
-	const time = new Date(date).getTime()
+	const time = parseInt(args.to_date)
 
 	setTimeout(CountdownTimer(time, the_div), 3000)
 }
