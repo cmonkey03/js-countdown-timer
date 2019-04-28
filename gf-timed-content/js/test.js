@@ -41,7 +41,9 @@ function CountdownTimer(endTime, the_div) {
         hours,
         minutes,
         seconds
-      }
+      };
+
+      return countdownObj;
     } else {
       //Remove countdown timer
       // var countdownContainer = document.getElementById('countdown-container')
