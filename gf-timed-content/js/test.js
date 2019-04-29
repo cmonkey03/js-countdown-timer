@@ -4,7 +4,40 @@ function CountdownTimer(endTime, the_div) {
   	return;
   }
 
+  addCountdownContainer()
   setInterval(calculate, 1000);
+
+  function addCountdownContainer() {
+    let timer = document.getElementById(the_div)
+    console.log(the_div)
+    console.log(timer)
+
+    // document.getElementById(the_div).innerHTML = "
+    //   <section class="countdown-container" id="countdown-container">
+    //
+    //     <div class="days-container">
+    //       <div class="days" id="days"></div>
+    //       <div class="days-label">days</div>
+    //     </div>
+    //
+    //     <div class="hours-container">
+    //       <div class="hours" id="hours"></div>
+    //       <div class="hours-label">hours</div>
+    //     </div>
+    //
+    //     <div class="minutes-container">
+    //       <div class="minutes" id="minutes"></div>
+    //       <div class="minutes-label">minutes</div>
+    //     </div>
+    //
+    //     <div class="seconds-container">
+    //       <div class="seconds" id="seconds"></div>
+    //       <div class="seconds-label">seconds</div>
+    //     </div>
+    //
+    //   </section>
+    // "
+  }
 
   function calculate() {
 		let days, hours, minutes, seconds;
