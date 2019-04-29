@@ -68,14 +68,7 @@ function CountdownTimer(endTime, the_div) {
       timer.innerHTML += 'Minutes:' + ("0" + minutes).slice(-2) + ', ';
       timer.innerHTML += 'Seconds:' + ("0" + seconds).slice(-2);
 
-      const countdownObj = {
-        days,
-        hours,
-        minutes,
-        seconds
-      };
-
-      return countdownObj;
+      return;
     } else {
       //Remove countdown timer
       // var countdownContainer = document.getElementById('countdown-container')
