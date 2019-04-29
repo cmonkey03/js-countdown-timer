@@ -20,9 +20,16 @@ function CountdownTimer(endTime, the_div) {
       countDiv.id = unit
       countDiv.className = unit
 
-      // let labelDiv = document.createElement
+      let labelDiv = document.createElement('div')
+      labelDiv.className = unit + '-label'
+
+      const labelText = unit[0].toUpperCase() + unit.substring(1)
+      let labelNode = document.createTextNode(labelText)
+
+      labelDiv.appendChild(labelNode)
 
       parentDiv.appendChild(countDiv)
+      parentDiv.appendChild(labelDiv)
       console.log(parentDiv)
       timer.appendChild(parentDiv)
     })
