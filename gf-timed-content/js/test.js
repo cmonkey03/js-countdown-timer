@@ -12,25 +12,39 @@ function CountdownTimer(endTime, the_div) {
 
     const times = ['days', 'hours', 'minutes', 'seconds']
 
+    times.forEach((unit) => {
+      let parentDiv = document.createElement('div')
+      parentDiv.className = unit + '-container'
 
-    timer.innerHTML = `<section class="countdown-container" id="countdown-container">
-                        <div class="days-container">
-                          <div class="days" id="days"></div>
-                          <div class="days-label">days</div>
-                        </div>
-                        <div class="hours-container">
-                          <div class="hours" id="hours"></div>
-                          <div class="hours-label">hours</div>
-                        </div>
-                        <div class="minutes-container">
-                          <div class="minutes" id="minutes"></div>
-                          <div class="minutes-label">minutes</div>
-                        </div>
-                        <div class="seconds-container">
-                          <div class="seconds" id="seconds"></div>
-                          <div class="seconds-label">seconds</div>
-                        </div>
-                      </section>`
+      let countDiv = document.createElement('div')
+      countDiv.id = unit
+      countDiv.className = unit
+
+      // let labelDiv = document.createElement
+
+      parentDiv.appendChild(countDiv)
+      console.log(parentDiv)
+      timer.appendChild(parentDiv)
+    })
+
+    // timer.innerHTML = `<section class="countdown-container" id="countdown-container">
+    //                     <div class="days-container">
+    //                       <div class="days" id="days"></div>
+    //                       <div class="days-label">days</div>
+    //                     </div>
+    //                     <div class="hours-container">
+    //                       <div class="hours" id="hours"></div>
+    //                       <div class="hours-label">hours</div>
+    //                     </div>
+    //                     <div class="minutes-container">
+    //                       <div class="minutes" id="minutes"></div>
+    //                       <div class="minutes-label">minutes</div>
+    //                     </div>
+    //                     <div class="seconds-container">
+    //                       <div class="seconds" id="seconds"></div>
+    //                       <div class="seconds-label">seconds</div>
+    //                     </div>
+    //                   </section>`
   }
 
   function calculate() {
