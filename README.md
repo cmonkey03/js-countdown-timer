@@ -1,5 +1,5 @@
 # js-countdown-timer
-# A vanillaJS countdown timer with PHP for a custom Wordpress Plugin
+## A vanillaJS countdown timer with PHP for a custom Wordpress Plugin
 
 Instructions:
 
