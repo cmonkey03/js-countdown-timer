@@ -53,9 +53,9 @@ function CountdownTimer(endTime, the_div) {
   timer.appendChild(countdownSection)
 
   //RETRIEVE HTML ELEMENTS FOR TIMER CALCULATION
-  let dayDiv = document.getElementById('days')
-  let hourDiv = document.getElementById('hours')
-  let minuteDiv = document.getElementById('minutes')
+  let daysDiv = document.getElementById('days')
+  let hoursDiv = document.getElementById('hours')
+  let minutesDiv = document.getElementById('minutes')
   let secondsDiv = document.getElementById('seconds')
 
   // CALCULATE TIMER EVERY SECOND
@@ -89,15 +89,27 @@ function CountdownTimer(endTime, the_div) {
       minutes = ("0" + minutes).slice(-2);
       seconds = ("0" + seconds).slice(-2);
 
-      let daysTextNode = document.createTextNode(days)
-      let hoursTextNode = document.createTextNode(hours)
-      let minutesTextNode = document.createTextNode(minutes)
-      let secondsTextNode = document.createTextNode(seconds)
+      let daysTextNode = document.createTextNode(days.toString())
+      let hoursTextNode = document.createTextNode(hours.toString())
+      let minutesTextNode = document.createTextNode(minutes.toString())
+      let secondsTextNode = document.createTextNode(seconds.toString())
 
-      dayDiv.innerHTML = days
-      hourDiv.innerHTML = hours
-      minuteDiv.innerHTML = minutes
-      secondsDiv.innerHTML = seconds
+      if (daysDiv.firstChild) {
+        daysDiv.removeChild(daysDiv.firstChild)
+      }
+      daysDiv.appendChild(daysTextNode)
+      if (hoursDiv.firstChild) {
+        hoursDiv.removeChild(hoursDiv.firstChild)
+      }
+      hoursDiv.appendChild(hoursTextNode)
+      if (minutesDiv.firstChild) {
+        minutesDiv.removeChild(minutesDiv.firstChild)
+      }
+      minutesDiv.appendChild(minutesTextNode)
+      if (secondsDiv.firstChild) {
+        secondsDiv.removeChild(secondsDiv.firstChild)
+      }
+      secondsDiv.appendChild(secondsTextNode)
 
       return;
     } else {
