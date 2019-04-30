@@ -22,21 +22,18 @@ function CountdownTimer(endTime, the_div) {
     return;
   }
 
-  let days, hours, minutes, seconds;
-
-  let timer = document.getElementById(the_div)
-
+  // CALCULATE TIME REMAINING
   // Get Unix timestamp
   let startTime = new Date().getTime();
   // Convert milliseconds to seconds to be
   // compatable with PHP timestamp
   startTime = parseInt(startTime / 1000)
-
   let timeRemaining = endTime - startTime;
 
-  const times = ['days', 'hours', 'minutes', 'seconds']
+  // BUILD HTML ELEMENTS
   let timer = document.getElementById(the_div)
   let countdownSection = document.createElement('section')
+  const times = ['days', 'hours', 'minutes', 'seconds']
 
   countdownSection.id = 'countdown-container'
   countdownSection.className = 'countdown-container'
@@ -65,8 +62,9 @@ function CountdownTimer(endTime, the_div) {
 
   // setInterval(calculate, 1000);
 
-  function calculate() {
 
+  function calculate() {
+    let days, hours, minutes, seconds;
 
     if (timeRemaining >= 0) {
       days = parseInt(timeRemaining / 86400);
