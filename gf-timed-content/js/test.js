@@ -1,3 +1,6 @@
+// gf_timed_content_init & gf_timed_content_countdown
+// are called by gf_timed_content.php
+
 function gf_timed_content_init (json_arg) {
   const args = JSON.parse(json_arg);
   // alert ('inside init with a target date: ' + args['target_date']);
@@ -16,45 +19,43 @@ function gf_timed_content_countdown(json_arg) {
 function CountdownTimer(endTime, the_div) {
 
   if (isNaN(endTime)) {
-  	return;
+    return;
   }
 
-  addCountdownContainer()
+  let days, hours, minutes, seconds;
+
+  const times = ['days', 'hours', 'minutes', 'seconds']
+  let timer = document.getElementById(the_div)
+  let countdownSection = document.createElement('section')
+
+  countdownSection.id = 'countdown-container'
+  countdownSection.className = 'countdown-container'
+
+  times.forEach((unit) => {
+    let parentDiv = document.createElement('div')
+    parentDiv.className = unit + '-container'
+
+    let countDiv = document.createElement('div')
+    countDiv.id = unit
+    countDiv.className = unit
+
+    let labelDiv = document.createElement('div')
+    labelDiv.className = unit + '-label'
+
+    const labelText = unit[0].toUpperCase() + unit.substring(1)
+    let labelTextNode = document.createTextNode(labelText)
+
+    labelDiv.appendChild(labelTextNode)
+    parentDiv.appendChild(countDiv)
+    parentDiv.appendChild(labelDiv)
+    countdownSection.appendChild(parentDiv)
+  })
+
+  timer.appendChild(countdownSection)
+
   // setInterval(calculate, 1000);
 
-  function addCountdownContainer() {
-    let timer = document.getElementById(the_div)
-    let countdownSection = document.createElement('section')
-    const times = ['days', 'hours', 'minutes', 'seconds']
-
-    countdownSection.id = 'countdown-container'
-    countdownSection.className = 'countdown-container'
-
-    times.forEach((unit) => {
-      let parentDiv = document.createElement('div')
-      parentDiv.className = unit + '-container'
-
-      let countDiv = document.createElement('div')
-      countDiv.id = unit
-      countDiv.className = unit
-
-      let labelDiv = document.createElement('div')
-      labelDiv.className = unit + '-label'
-
-      const labelText = unit[0].toUpperCase() + unit.substring(1)
-      let labelTextNode = document.createTextNode(labelText)
-
-      labelDiv.appendChild(labelTextNode)
-      parentDiv.appendChild(countDiv)
-      parentDiv.appendChild(labelDiv)
-      countdownSection.appendChild(parentDiv)
-    })
-
-    timer.appendChild(countdownSection)
-  }
-
   function calculate() {
-		let days, hours, minutes, seconds;
 
 		let timer = document.getElementById(the_div)
 
