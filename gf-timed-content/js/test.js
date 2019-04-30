@@ -62,10 +62,10 @@ function CountdownTimer(endTime, the_div) {
 
   // setInterval(calculate, 1000);
 
-  let dayDiv = timer.getElementById('days')
-  let hourDiv = timer.getElementById('hours')
-  let minuteDiv = timer.getElementById('minutes')
-  let secondsDiv = timer.getElementById('seconds')
+  let dayDiv = document.getElementById('days')
+  let hourDiv = document.getElementById('hours')
+  let minuteDiv = document.getElementById('minutes')
+  let secondsDiv = document.getElementById('seconds')
 
   function calculate() {
     let days, hours, minutes, seconds;
@@ -82,10 +82,10 @@ function CountdownTimer(endTime, the_div) {
 
       seconds = parseInt(timeRemaining);
 
-      dayDiv.innerHTML = 'Days:' + parseInt(days, 10) + ', ';
-      hourDiv.innerHTML += 'Hours:' + ("0" + hours).slice(-2) + ', ';
-      minuteDiv.innerHTML += 'Minutes:' + ("0" + minutes).slice(-2) + ', ';
-      secondsDiv.innerHTML += 'Seconds:' + ("0" + seconds).slice(-2);
+      dayDiv.innerHTML = parseInt(days, 10) + ', ';
+      hourDiv.innerHTML += ("0" + hours).slice(-2) + ', ';
+      minuteDiv.innerHTML += ("0" + minutes).slice(-2) + ', ';
+      secondsDiv.innerHTML += ("0" + seconds).slice(-2);
 
       return;
     } else {
