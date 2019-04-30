@@ -59,12 +59,12 @@ function CountdownTimer(endTime, the_div) {
   let secondsDiv = document.getElementById('seconds')
 
   // CALCULATE TIMER EVERY SECOND
-  setInterval(calculate, 1000);
+  let calculate = setInterval(function() {
 
-  function calculate() {
     // CALCULATE TIME REMAINING
     // Get Unix timestamp
     let startTime = new Date().getTime();
+
     // Convert milliseconds to seconds to be
     // compatable with PHP timestamp
     startTime = parseInt(startTime / 1000)
@@ -113,14 +113,10 @@ function CountdownTimer(endTime, the_div) {
 
       return;
     } else {
-      //Remove countdown timer
-      // var countdownContainer = document.getElementById('countdown-container')
-      // countdownContainer.innerHTML = ""
-
-      //Display hours, minutes and seconds into video
-      // titleBar.innerHTML = "Time into video play"
-
+      //Remove countdown timer when time runs out
+      timer.remove()
+      clearInterval(calculate)
       return;
     }
-  }
+  }, 1000)
 }
