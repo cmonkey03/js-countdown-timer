@@ -84,10 +84,20 @@ function CountdownTimer(endTime, the_div) {
 
       seconds = parseInt(timeRemaining);
 
-      dayDiv.innerHTML = parseInt(days, 10);
-      hourDiv.innerHTML = ("0" + hours).slice(-2);
-      minuteDiv.innerHTML = ("0" + minutes).slice(-2);
-      secondsDiv.innerHTML = ("0" + seconds).slice(-2);
+      days = parseInt(days, 10);
+      hours = ("0" + hours).slice(-2);
+      minutes = ("0" + minutes).slice(-2);
+      seconds = ("0" + seconds).slice(-2);
+
+      let daysTextNode = document.createTextNode(days)
+      let hoursTextNode = document.createTextNode(hours)
+      let minutesTextNode = document.createTextNode(minutes)
+      let secondsTextNode = document.createTextNode(seconds)
+
+      dayDiv.innerHTML = days
+      hourDiv.innerHTML = hours
+      minuteDiv.innerHTML = minutes
+      secondsDiv.innerHTML = seconds
 
       return;
     } else {
