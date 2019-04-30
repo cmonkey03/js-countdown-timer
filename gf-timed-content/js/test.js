@@ -24,6 +24,16 @@ function CountdownTimer(endTime, the_div) {
 
   let days, hours, minutes, seconds;
 
+  let timer = document.getElementById(the_div)
+
+  // Get Unix timestamp
+  let startTime = new Date().getTime();
+  // Convert milliseconds to seconds to be
+  // compatable with PHP timestamp
+  startTime = parseInt(startTime / 1000)
+
+  let timeRemaining = endTime - startTime;
+
   const times = ['days', 'hours', 'minutes', 'seconds']
   let timer = document.getElementById(the_div)
   let countdownSection = document.createElement('section')
@@ -57,15 +67,6 @@ function CountdownTimer(endTime, the_div) {
 
   function calculate() {
 
-		let timer = document.getElementById(the_div)
-
-    // Get Unix timestamp
-    let startTime = new Date().getTime();
-    // Convert milliseconds to seconds to be
-    // compatable with PHP timestamp
-    startTime = parseInt(startTime / 1000)
-
-    let timeRemaining = endTime - startTime;
 
     if (timeRemaining >= 0) {
       days = parseInt(timeRemaining / 86400);
