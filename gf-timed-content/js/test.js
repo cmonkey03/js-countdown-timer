@@ -1,3 +1,5 @@
+// TO VIEW FULL REPO (WITH STYLING) VISIT: https://github.com/cmonkey03/js-countdown-timer
+
 // gf_timed_content_init & gf_timed_content_countdown
 // are called by gf_timed_content.php
 
