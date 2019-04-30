@@ -62,6 +62,10 @@ function CountdownTimer(endTime, the_div) {
 
   // setInterval(calculate, 1000);
 
+  let dayDiv = timer.getElementById('days')
+  let hourDiv = timer.getElementById('hours')
+  let minuteDiv = timer.getElementById('minutes')
+  let secondsDiv = timer.getElementById('seconds')
 
   function calculate() {
     let days, hours, minutes, seconds;
