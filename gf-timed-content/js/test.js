@@ -93,7 +93,7 @@ function CountdownTimer(endTime, the_div) {
       let hoursTextNode = document.createTextNode(hours.toString())
       let minutesTextNode = document.createTextNode(minutes.toString())
       let secondsTextNode = document.createTextNode(seconds.toString())
-
+      
       if (daysDiv.firstChild) {
         daysDiv.removeChild(daysDiv.firstChild)
       }
@@ -119,7 +119,7 @@ function CountdownTimer(endTime, the_div) {
 
       //Display hours, minutes and seconds into video
       // titleBar.innerHTML = "Time into video play"
-
+      clearInterval(calculate)
       return;
     }
   }
