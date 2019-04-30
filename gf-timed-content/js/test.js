@@ -22,14 +22,6 @@ function CountdownTimer(endTime, the_div) {
     return;
   }
 
-  // CALCULATE TIME REMAINING
-  // Get Unix timestamp
-  let startTime = new Date().getTime();
-  // Convert milliseconds to seconds to be
-  // compatable with PHP timestamp
-  startTime = parseInt(startTime / 1000)
-  let timeRemaining = endTime - startTime;
-
   // BUILD HTML ELEMENTS
   let timer = document.getElementById(the_div)
   let countdownSection = document.createElement('section')
@@ -60,14 +52,24 @@ function CountdownTimer(endTime, the_div) {
 
   timer.appendChild(countdownSection)
 
-  // setInterval(calculate, 1000);
-
+  //RETRIEVE HTML ELEMENTS FOR TIMER CALCULATION
   let dayDiv = document.getElementById('days')
   let hourDiv = document.getElementById('hours')
   let minuteDiv = document.getElementById('minutes')
   let secondsDiv = document.getElementById('seconds')
 
+  // CALCULATE TIMER EVERY SECOND
+  setInterval(calculate, 1000);
+
   function calculate() {
+    // CALCULATE TIME REMAINING
+    // Get Unix timestamp
+    let startTime = new Date().getTime();
+    // Convert milliseconds to seconds to be
+    // compatable with PHP timestamp
+    startTime = parseInt(startTime / 1000)
+    let timeRemaining = endTime - startTime;
+
     let days, hours, minutes, seconds;
 
     if (timeRemaining >= 0) {
@@ -82,10 +84,10 @@ function CountdownTimer(endTime, the_div) {
 
       seconds = parseInt(timeRemaining);
 
-      dayDiv.innerHTML = parseInt(days, 10) + ', ';
-      hourDiv.innerHTML += ("0" + hours).slice(-2) + ', ';
-      minuteDiv.innerHTML += ("0" + minutes).slice(-2) + ', ';
-      secondsDiv.innerHTML += ("0" + seconds).slice(-2);
+      dayDiv.innerHTML = parseInt(days, 10);
+      hourDiv.innerHTML = ("0" + hours).slice(-2);
+      minuteDiv.innerHTML = ("0" + minutes).slice(-2);
+      secondsDiv.innerHTML = ("0" + seconds).slice(-2);
 
       return;
     } else {
