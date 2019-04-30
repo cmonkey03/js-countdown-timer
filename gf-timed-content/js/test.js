@@ -1,3 +1,18 @@
+function gf_timed_content_init (json_arg) {
+  const args = JSON.parse(json_arg);
+  // alert ('inside init with a target date: ' + args['target_date']);
+}
+
+function gf_timed_content_countdown(json_arg) {
+  const args = JSON.parse(json_arg);
+  const the_div = args['div_id']
+
+  // The endTime is a 10-digit Unix timestamp
+  const endTime = parseInt(args.to_date)
+
+  setTimeout(() => CountdownTimer(endTime, the_div), 3000)
+}
+
 function CountdownTimer(endTime, the_div) {
 
   if (isNaN(endTime)) {
@@ -80,19 +95,4 @@ function CountdownTimer(endTime, the_div) {
       return;
     }
   }
-}
-
-function gf_timed_content_init (json_arg) {
-	const args = JSON.parse(json_arg);
-	// alert ('inside init with a target date: ' + args['target_date']);
-}
-
-function gf_timed_content_countdown(json_arg) {
-	const args = JSON.parse(json_arg);
-	const the_div = args['div_id']
-
-  // The endTime is a 10-digit Unix timestamp
-	const endTime = parseInt(args.to_date)
-
-	setTimeout(() => CountdownTimer(endTime, the_div), 3000)
 }
