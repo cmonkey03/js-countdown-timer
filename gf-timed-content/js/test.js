@@ -82,10 +82,10 @@ function CountdownTimer(endTime, the_div) {
 
       seconds = parseInt(timeRemaining);
 
-      timer.innerHTML = 'Days:' + parseInt(days, 10) + ', ';
-      timer.innerHTML += 'Hours:' + ("0" + hours).slice(-2) + ', ';
-      timer.innerHTML += 'Minutes:' + ("0" + minutes).slice(-2) + ', ';
-      timer.innerHTML += 'Seconds:' + ("0" + seconds).slice(-2);
+      dayDiv.innerHTML = 'Days:' + parseInt(days, 10) + ', ';
+      hourDiv.innerHTML += 'Hours:' + ("0" + hours).slice(-2) + ', ';
+      minuteDiv.innerHTML += 'Minutes:' + ("0" + minutes).slice(-2) + ', ';
+      secondsDiv.innerHTML += 'Seconds:' + ("0" + seconds).slice(-2);
 
       return;
     } else {
